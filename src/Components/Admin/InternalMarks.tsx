@@ -1,26 +1,24 @@
-import Notestable from "../Resuable/Notestable"
-
+import Notestable from "../Resuable/Notestable";
 
 const InternalMarks = () => {
-
-    const IntMarksData = [
-        {
-          name: "John",
-          subject: "Theory of Computation",
-          code: "CS3462",
-          pass: "ok",
-          mark: "96",
-          download: "edit",
-        },
-        {
-          name: "John",
-          subject: "Theory of Computation",
-          code: "CS3462",
-          pass: "notok",
-          mark: "-",
-          download: "edit",
-        },
-      ];
+  const IntMarksData = [
+    {
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Pass: "ok",
+      Mark: "96",
+      download: "edit",
+    },
+    {
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Pass: "notok",
+      Mark: "-",
+      download: "edit",
+    },
+  ];
 
   return (
     <>
@@ -31,7 +29,7 @@ const InternalMarks = () => {
         CoutsName="Students"
       />
     </>
-  )
-}
+  );
+};
 
-export default InternalMarks
+export default InternalMarks;

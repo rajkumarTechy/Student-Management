@@ -3,17 +3,17 @@ import Notestable from "../Resuable/Notestable";
 const TeachersList = () => {
   const TeachersData = [
     {
-      name: "John",
-      role: "Professor",
-      "total subjects": "6",
-      "total classes": "II, I",
+      Name: "John",
+      Role: "Professor",
+      "Total Subjects": "6",
+      "Total Classes": "II, I",
       download: "view",
     },
     {
-      name: "Ben",
-      role: "HOD",
-      "total subjects": "9",
-      "total classes": "III, IV",
+      Name: "Ben",
+      Role: "HOD",
+      "Total Subjects": "9",
+      "Total Classes": "III, IV",
       download: "view",
     },
   ];

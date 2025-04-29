@@ -37,6 +37,7 @@ const AssignmentTable = ({ title, rows }: any) => {
                   idx === rows.length - 1 ? "rounded-bl-2xl" : "border-b"
                 }`}
               >
+                {row.subject}
               </td>
               {row.status && (
                 <td

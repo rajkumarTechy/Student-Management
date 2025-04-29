@@ -78,7 +78,7 @@ const Sidebar = () => {
             Download Notes
           </NavLink>
           <NavLink
-            to={role === "student" ? "timetable" : ""}
+            to={role === "student" ? "timetable" : "/admin/timetable"}
             className={({ isActive }) =>
               `${
                 isActive ? "bg-primary text-fontPrimary" : "text-fontSecondary "

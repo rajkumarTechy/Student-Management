@@ -3,18 +3,17 @@ import Notestable from "../Resuable/Notestable";
 const NotesAdmin = () => {
   const Notes = [
     {
-      name: "John",
-      code: "CS3462",
-      regulation: "2021 - 2025",
-      semester: "06",
+      Name: "John",
+      Code: "CS3462",
+      Regulation: "2021 - 2025",
+      Semester: "06",
 
     },
     {
-      name: "John",
-      code: "CS3462",
-      regulation: "2022 - 2026",
-      semester: "06",
-
+      Name: "John",
+      Code: "CS3462",
+      Regulation: "2022 - 2026",
+      Semester: "06",
     },
   ];
 

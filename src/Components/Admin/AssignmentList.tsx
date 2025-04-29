@@ -3,19 +3,19 @@ import Notestable from "../Resuable/Notestable";
 const AssignmentList = () => {
   const AssignmentData = [
     {
-      name: "John",
-      subject: "Theory of Computation",
-      code: "CS3462",
-      status: "ok",
-      mark: "96",
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Status: "ok",
+      Mark: "96",
       download: "edit",
     },
     {
-      name: "John",
-      subject: "Theory of Computation",
-      code: "CS3462",
-      status: "notok",
-      mark: "-",
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Status: "notok",
+      Mark: "-",
       download: "edit",
     },
   ];

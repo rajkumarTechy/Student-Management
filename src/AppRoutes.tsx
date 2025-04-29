@@ -25,6 +25,7 @@ import SemesterResultsAdmin from "./Components/Admin/SemesterResultsAdmin";
 import NotesAdmin from "./Components/Admin/NotesAdmin";
 import CircularsAdmin from "./Components/Admin/CircularsAdmin";
 import EventsAdmin from "./Components/Admin/EventsAdmin";
+import TimetableAdmin from "./Components/Admin/TimetableAdmin";
 
 const AppRoutes = () => {
   const { isLoggedin } = useAuth();
@@ -58,7 +59,7 @@ const AppRoutes = () => {
           <Route path="/admin/notes" element={<NotesAdmin />} />
           <Route path="/admin/circular" element={<CircularsAdmin />} />
           <Route path="/admin/events" element={<EventsAdmin />} />
-
+          <Route path="/admin/timetable" element={<TimetableAdmin />} />
           <Route path="/admin/overview" element={<OverviewAdmin />} />
         </Routes>
       </div>

@@ -3,22 +3,23 @@ import Notestable from "../Resuable/Notestable";
 const SemesterResults = () => {
   const ResultData = [
     {
-      name: "John",
-      subject: "Theory of Computation",
-      code: "CS3462",
-      pass: "ok",
-      mark: "A+",
-      download: "edit",
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Pass: "ok",
+      Mark: "A+",
+      download: "edit", // keep this for icon rendering in the "Edit" column
     },
     {
-      name: "John",
-      subject: "Theory of Computation",
-      code: "CS3462",
-      pass: "notok",
-      mark: "A",
+      Name: "John",
+      Subject: "Theory of Computation",
+      Code: "CS3462",
+      Pass: "notok",
+      Mark: "A",
       download: "edit",
     },
   ];
+  
 
   return (
     <>

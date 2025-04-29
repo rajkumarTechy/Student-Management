@@ -13,13 +13,20 @@ import { useRole } from "../../Context/RoleProvider";
 interface TableProps {
   title: string;
   headers: string[];
-  CoutsName: string;
+  isTimetable?: boolean;
+  CoutsName?: string;
   data: {
     [key: string]: string;
   }[];
 }
 
-const Notestable = ({ title, headers, data, CoutsName }: TableProps) => {
+const Notestable = ({
+  title,
+  headers,
+  data,
+  isTimetable,
+  CoutsName,
+}: TableProps) => {
   const { role } = useRole();
 
   return (
@@ -88,21 +95,21 @@ const Notestable = ({ title, headers, data, CoutsName }: TableProps) => {
                 {headers.map((header, cellIndex) => (
                   <td
                     key={cellIndex}
-                    className={`font-medium px-2 py-3 border-b border-fontSecondary text-fontPrimary ${
+                    className={`font-medium px-2 py-3.5 border-b border-fontSecondary text-fontPrimary ${
                       cellIndex === 0 ? "text-left" : "text-center"
                     }`}
                   >
-                    {header.toLowerCase() === "status" ||
-                    header.toLowerCase() === "pass" ? (
+                    {["status", "pass"].includes(header.toLowerCase()) ? (
                       <div className="flex justify-center">
-                        {row[header.toLowerCase()] === "ok" ? (
+                        {row[header] === "ok" ? (
                           <IoIosCheckmark size={28} color="green" />
                         ) : (
                           <IoMdClose size={22} color="red" />
                         )}
                       </div>
-                    ) : header.toLowerCase() === "download" ||
-                      header.toLowerCase() === "downloads" ? (
+                    ) : ["download", "downloads"].includes(
+                        header.toLowerCase()
+                      ) ? (
                       <div className="flex justify-center gap-1.5">
                         {header.toLowerCase() === "downloads" && (
                           <LiaEdit size={26} className="text-fontPrimary" />
@@ -115,8 +122,7 @@ const Notestable = ({ title, headers, data, CoutsName }: TableProps) => {
                           />
                         )}
                       </div>
-                    ) : header.toLowerCase() === "view" ||
-                      header.toLowerCase() === "edit" ? (
+                    ) : ["view", "edit"].includes(header.toLowerCase()) ? (
                       <div className="flex justify-center gap-1.5">
                         <TfiEye size={26} className="text-fontPrimary" />
                         <LiaEdit size={26} className="text-fontPrimary" />
@@ -128,7 +134,7 @@ const Notestable = ({ title, headers, data, CoutsName }: TableProps) => {
                         )}
                       </div>
                     ) : (
-                      row[header.toLowerCase()]
+                      row[header] // <== This is the fix
                     )}
                   </td>
                 ))}
@@ -136,22 +142,44 @@ const Notestable = ({ title, headers, data, CoutsName }: TableProps) => {
             ))}
           </tbody>
         </table>
-        <div className="flex justify-between mx-11 py-3.5 pt-16">
-          <div className="flex gap-x-2.5">
-            <div className="bg-[#D9D9D9] px-2 py-0.5 rounded-md">
-              <MdKeyboardArrowLeft size={22} />
+        {!isTimetable ? (
+          <div className="flex justify-between mx-11 py-3.5 pt-16">
+            <div className="flex gap-x-2.5">
+              <div className="bg-[#D9D9D9] px-2 py-0.5 rounded-md">
+                <MdKeyboardArrowLeft size={22} />
+              </div>
+              <h1 className="font-medium text-sm text-fontPrimary">
+                Page 1 of 2
+              </h1>
+              <div className="bg-[#D9D9D9] px-2 py-0.5 rounded-md">
+                <MdKeyboardArrowRight size={22} />
+              </div>
             </div>
-            <h1 className="font-medium text-sm text-fontPrimary">
-              Page 1 of 2
+            <h1 className="text-fontPrimary font-medium">
+              Total {CoutsName} : <span>{data.length}</span>
             </h1>
-            <div className="bg-[#D9D9D9] px-2 py-0.5 rounded-md">
-              <MdKeyboardArrowRight size={22} />
-            </div>
           </div>
-          <h1 className="text-fontPrimary font-medium">
-            Total {CoutsName} : <span>{data.length}</span>
-          </h1>
-        </div>
+        ) : (
+          <div className="pb-12 pt-4 mx-12">
+            <h1 className="text-lg font-semibold text-fontPrimary">
+              Details :{" "}
+            </h1>
+            <ul className="pl-6">
+              <li className="font-medium text-fontPrimary py-1">
+                1. Theory of Computation (CS3452) - Mr. Smith
+              </li>
+              <li className="font-medium text-fontPrimary py-1">
+                2. Data Structures (CS3751) - Ms. Priya
+              </li>
+              <li className="font-medium text-fontPrimary py-1">
+                3. Cryptography and Cyber Security (CS3453) - Mr. Rajesh
+              </li>
+              <li className="font-medium text-fontPrimary py-1">
+                4. Database Management System(CS3852) - Ms. Jenifer
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );
